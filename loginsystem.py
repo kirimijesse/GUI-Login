@@ -33,6 +33,8 @@ def FFSignup():
 	Login()
 
 def Login():
+	global NameEL
+	global pwordEL
 
 	rootA = Tk()
 	rootA.title('Login')
@@ -50,5 +52,31 @@ def Login():
 	nameEL.grid(row=1, column=1)
 	pwordEL.grid(row=2, column=1)
 
-	loginB = Button(rootA, text='Delete User', fg='red', command=DelUser)
-	rmuser.grid
+	loginB = Button(rootA, text='login', command=CheckLogin)
+	loginB.grid(columnspan=2,sticky=W)
+
+
+
+	rmuser = Button(rootA, text='Delete User', fg='red', command=DelUser)
+	rmuser.grid(columnspan=2, sticky=W)
+	rootA.mainloop()
+
+def CheckLogin():
+	with open(cresd) as f:
+		data = f.readlines()
+		uname = data[0].rstrip()
+		pword = data[1].rstrip()
+
+	if nameEL.get() == uname and pwordEl == pword:
+		r = Tk()
+		r.title(':D')
+		r.geometry('150*50')
+		rlbl = Label(r, text='\n[! Invalid Login')
+		rlbl.pack()
+		r.mainloop()
+
+def DelUser():
+	os.remove(creds)
+	rootA.destroy()
+	Signup()
+			pass		
