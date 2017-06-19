@@ -16,9 +16,12 @@ def Signup():
 	nameL = Label(roots, text='New Username: ')
 	pwordL = Label(roots,text='New Password: ')
 	nameL.grid(row=1, column=0, sticky=W)
+	pwordL.grid(row=2, column=0, sticky=W)
 
 	nameE = Entry(roots)
 	pwordE = Entry(roots, show='*')
+	nameE.grid(row=1, column=1)
+	pwordE.grid(row=2, column=1)
 
 	signupButton = Button(roots, text='Signup', command=FSSignup)
 	signupButton.grid(columnspan=2, sticky=W)
@@ -64,7 +67,7 @@ def Login():
 	rootA.mainloop()
 
 def CheckLogin():
-	with open(cresd) as f:
+	with open(creds) as f:
 		data = f.readlines()
 		uname = data[0].rstrip()
 		pword = data[1].rstrip()
