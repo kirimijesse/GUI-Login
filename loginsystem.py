@@ -4,25 +4,27 @@ import os
 creds = 'tempfile.temp'
 
 def Signup():
-
+	global pwordE
+	global nameE
+	global roots
 
 	roots = Tk()
 	roots.title('Signup')
 	instruction = Label(roots, text='Please Enter new Credentials')
 	instruction.grid(row=0, column=0, sticky=E)
 
-	name = Label(roots, text='New Username: ')
+	nameL = Label(roots, text='New Username: ')
 	pwordL = Label(roots,text='New Password: ')
 	nameL.grid(row=1, column=0, sticky=W)
 
-	nameE = Entry = Entry(roots)
+	nameE = Entry(roots)
 	pwordE = Entry(roots, show='*')
 
 	signupButton = Button(roots, text='Signup', command=FSSignup)
 	signupButton.grid(columnspan=2, sticky=W)
 	roots.mainloop()
 
-def FFSignup():
+def FSSignup():
 	with open(creds, 'w') as f:
 		f.write(nameE.get())	
 		f.write('\n')
@@ -45,7 +47,7 @@ def Login():
 	nameL = Label(rootA, text='Username: ')
 	pwordL = Label(rootA, text='Password: ')
 	nameL.grid(row=1, sticky=W)
-	pwordL.grid(row2=2, sticky=W)
+	pwordL.grid(row=2, sticky=W)
 
 	nameEL = Entry(rootA)
 	pwordEL = Entry(rootA, show='*')
@@ -79,4 +81,8 @@ def DelUser():
 	os.remove(creds)
 	rootA.destroy()
 	Signup()
-			pass		
+
+if os.path.isfile(creds):
+	Login()
+else:
+	Signup()
