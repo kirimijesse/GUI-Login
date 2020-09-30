@@ -1,18 +1,14 @@
-## *Building a GUI login System with Tkinter*
+## The Login GUI 
+This is a **Login Gui** this really helps in Login , Sign up and in removing users .
 
-_App Finished_
+## Why use Login GUI
+You can use this python-tkinter Login GUI in your software / applications or in the backend of your website for login purposes . This is the best login GUI it will never bug .
 
+## Installation 
+You can install this GUI by running ```git clone https://github.com/kirimijesse/GUI-Login.git```
+If your on Windows then you have to install git .
 
-_Run Script on your Computer_
-
-
-_Install Tkinter on ubuntu *sudo apt-get install  tkinter*_
-
-
-
-## I used Python3
-
-###### __Tutorial from Sir Robo Youtube__
-
+## Programming Languages Used
+**Python** Programming Language is used in this project as it is very much growing and fast programming language .
 
 
