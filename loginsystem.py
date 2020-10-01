@@ -23,7 +23,7 @@ def Signup():
 	nameE.grid(row=1, column=1)
 	pwordE.grid(row=2, column=1)
 
-	signupButton = Button(roots, text='Signup', command=FSSignup)
+	signupButton = Button(roots, text='Signup', command=FSSignup, fg='black', bg='SeaGreen1',padx=5,pady=2)
 	signupButton.grid(columnspan=2, sticky=W)
 	roots.mainloop()
 
@@ -43,26 +43,27 @@ def Login():
 	global rootA
 
 	rootA = Tk()
+	rootA.minsize(500,500)
 	rootA.title('Login')
 
-	instruction = Label(rootA, text='Please Login\n')
-	instruction.grid(sticky=E)
+	instruction = Label(rootA, text='Please Login\n',font=('Verdana', 12), fg='black',padx=5,pady=2)
+	instruction.place(relx=0.5,rely=0.3,anchor='center')
 
 	nameL = Label(rootA, text='Username: ')
 	pwordL = Label(rootA, text='Password: ')
-	nameL.grid(row=1, sticky=W)
-	pwordL.grid(row=2, sticky=W)
+	nameL.place(relx=0.3,rely=0.45)
+	pwordL.place(relx=0.3,rely=0.55)
 
-	nameEL = Entry(rootA)
+	nameEL = Entry(rootA,)
 	pwordEL = Entry(rootA, show='*')
-	nameEL.grid(row=1, column=1)
-	pwordEL.grid(row=2, column=1)
+	nameEL.place(relx=0.5,rely=0.45)
+	pwordEL.place(relx=0.5,rely=0.55)
 
-	loginB = Button(rootA, text='Login', command=CheckLogin)
-	loginB.grid(columnspan=2, sticky=W)
+	loginB = Button(rootA, text='Login', command=CheckLogin,font=('Verdana', 8), fg='black', bg='SeaGreen1',padx=5,pady=2)
+	loginB.place(relx=0.5,rely=0.7,anchor='center')
 
-	rmuser = Button(rootA, text='Delete User', fg='red', command=DelUser)
-	rmuser.grid(columnspan=2, sticky=W)
+	rmuser = Button(rootA, text='Delete User', command=DelUser,font=('Verdana', 8), fg='black', bg='SeaGreen1',padx=5,pady=2)
+	rmuser.place(relx=0.5,rely=0.85,anchor='center')
 	rootA.mainloop()
 
 def CheckLogin():
